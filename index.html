@@ -1,73 +1,98 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Історія села Лозове</title>
-	<link rel="icon" type="image/png" href="img/ico/main.png">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff;
-            text-align: center;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1em 0;
-        }
-        main {
-            padding: 2em;
-        }
-        footer {
-            background-color: #ddd;
-            padding: 1em 0;
-            margin-top: 2em;
-        }
-    </style>
-    <link
-      rel="stylesheet"
-      href="libs/fancybox/fancybox.css"
-    />
+  <meta charset="UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Історія села Лозове</title>
+  <link rel="icon" type="image/png" href="img/ico/main.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="libs/fancybox/fancybox.css" />
 </head>
 <body>
+  <div class="container">
+    <main class="content" id="main-content">
+      <h2 id="intro">Вступ</h2>
+	  <p>Сайт в процессі наповнення!</p>
+      <div class="note">
+        <strong>Увага:</strong> Подана нижче історія села складена на основі доступних джерел, усних свідчень та збережених матеріалів. Через обмеженість або втрату архівних даних деякі факти можуть бути неповними або неточними. Проте ми доклали максимум зусиль, аби відтворити історію нашого села якомога точніше.
+      </div>
 
-    <header>
-        <h1>Історія села Лозове!</h1>
-    </header>
+      <h2 id="chapter-1">Розділ 1</h2>
+	  <p>Село Лозове розташоване у північній частині Донецької області, на території сучасного Краматорського району. Історія цього невеликого, але мальовничого поселення бере початок ще в другій половині XVIII століття, у часи активного заселення степових просторів Слобожанщини.</p>
+	  
+      <a data-fancybox="gallery" href="img/photo/1.avif"
+	     data-caption="Памятник павшим героям 1941-1945 (2012 рік)">
+        <img src="img/photo/1.avif" class="preview-image">
+      </a>
+	  <p>Памятник павшим героям 1941-1945 (2012 рік)</p>
+	  
+	  <h2 id="chapter-2">Розділ 2</h2>
+	  
+      <a data-fancybox="gallery" href="img/photo/2.avif">
+        <img src="img/photo/2.avif" class="preview-image">
+      </a>
+	  <p>Вхід до школи вид з дороги (2012 рік)</p>
 
-    <main>
-        <h2>Історія</h2>
-        <a
-          href="img/photo/1.avif"
-          data-fancybox="gallery"
-          data-caption="Памятник павшим героям 1941-1945 (2012 рік)"
-        >
-          <img src="img/photo/1.avif" alt="Моє фото" style="max-width: 20%; height: auto;">
-        </a>
-        <p>Памятник</p>
-
-        <a
-          href="img/photo/2.avif"
-          data-fancybox="gallery"
-          data-caption="Вхід до школи вид з дороги (2012 рік)"
-        >
-          <img src="img/photo/2.avif" alt="Моє фото2" style="max-width: 20%; height: auto;">
-        </a>
-        <p>Школа</p>
     </main>
 
-    <footer>
-        <p>© 2025 Мій Сайт</p>
-    </footer>
+    <aside class="sidebar">
+      <nav id="toc">
+        <h3>Зміст</h3>
+        <ul></ul> <!-- Тут буде автоматично додано елементи -->
+      </nav>
+    </aside>
+  </div>
 
-    <!-- Fancybox JS -->
-    <script src="libs/fancybox/fancybox.umd.js"></script>
-    <script>
-      Fancybox.bind("[data-fancybox='gallery']", {
+  <!-- Fancybox -->
+  <script src="libs/fancybox/fancybox.umd.js"></script>
+
+  <!-- Скрипт для автогенерації змісту -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toc = document.querySelector('#toc ul');
+      const content = document.getElementById('main-content');
+      const headers = content.querySelectorAll('h2, h3');
+
+      headers.forEach(header => {
+        if (!header.id) {
+          header.id = header.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+        }
+
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `#${header.id}`;
+        a.textContent = header.textContent;
+        li.appendChild(a);
+
+        if (header.tagName === 'H3') {
+          li.style.marginLeft = '20px';
+        }
+
+        toc.appendChild(li);
       });
-    </script>
+
+      // Плавне прокручування
+      document.querySelectorAll('#toc a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+  </script>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-91Z98HG4CR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-91Z98HG4CR');
+  </script>
+
 </body>
 </html>
