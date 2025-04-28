@@ -79,3 +79,11 @@ body {
 .preview-image:hover {
     transform: scale(1.05);
 }
+
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #0d1117;
+  color: #fff;
+  font-size: 14px;
+}
