@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Історія села Лозове</title>
+	<link rel="icon" type="image/png" href="img/ico/main.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+        }
+        main {
+            padding: 2em;
+        }
+        footer {
+            background-color: #ddd;
+            padding: 1em 0;
+            margin-top: 2em;
+        }
+    </style>
+    <link
+      rel="stylesheet"
+      href="libs/fancybox/fancybox.css"
+    />
+</head>
+<body>
+
+    <header>
+        <h1>Історія села Лозове!</h1>
+    </header>
+
+    <main>
+        <h2>Історія</h2>
+        <a
+          href="img/photo/1.avif"
+          data-fancybox="gallery"
+          data-caption="Памятник павшим героям 1941-1945 (2012 рік)"
+        >
+          <img src="img/photo/1.avif" alt="Моє фото" style="max-width: 20%; height: auto;">
+        </a>
+        <p>Памятник</p>
+
+        <a
+          href="img/photo/2.avif"
+          data-fancybox="gallery"
+          data-caption="Вхід до школи вид з дороги (2012 рік)"
+        >
+          <img src="img/photo/2.avif" alt="Моє фото2" style="max-width: 20%; height: auto;">
+        </a>
+        <p>Школа</p>
+    </main>
+
+    <footer>
+        <p>© 2025 Мій Сайт</p>
+    </footer>
+
+    <!-- Fancybox JS -->
+    <script src="libs/fancybox/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind("[data-fancybox='gallery']", {
+      });
+    </script>
+</body>
+</html>
