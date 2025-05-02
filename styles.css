@@ -25,6 +25,12 @@ body {
     position: sticky;
     top: 20px;
     height: fit-content;
+    overflow: hidden; /* сховає прокрутку основного блока */
+}
+
+.sidebar-content {
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 .sidebar h3 {
@@ -86,7 +92,7 @@ body {
 }
 
 .preview-image:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 .site-footer {
