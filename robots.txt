@@ -1,16 +1,4 @@
-User-agent: Yandex
-Disallow: /
-
-User-agent: GoogleBot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: bingbot
-Allow: /
-
-User-agent: Slurp
+User-agent: *
 Allow: /
 
 Sitemap: https://lozove.pp.ua/sitemap.xml
